@@ -8,6 +8,7 @@ import android.webkit.JavascriptInterface
 import android.webkit.WebChromeClient
 import android.webkit.WebView
 import android.webkit.WebViewClient
+import java.io.File
 import androidx.appcompat.app.AppCompatActivity
 import androidx.datastore.preferences.core.edit
 import androidx.lifecycle.lifecycleScope
@@ -41,7 +42,16 @@ class MainActivity : AppCompatActivity() {
         }
 
         try {
+                    // Ensure optimization directory exists
+        val optDir = File(filesDir, "optimizations")
+        if (!optDir.exists()) {
+            optDir.mkdirs()
+        }
+        try {
             native.initLayer()
+        } catch (e: Throwable) {
+            android.util.Log.e("MainActivity", "Native init failed", e)
+        }
         } catch (e: Throwable) {
             android.util.Log.e("MainActivity", "Native init failed", e)
         }
