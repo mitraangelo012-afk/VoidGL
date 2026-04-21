@@ -19,7 +19,7 @@ import kotlinx.coroutines.launch
 class MainActivity : AppCompatActivity() {
 
     private lateinit var webView: WebView
-    private val native = NativeBridge()
+    private val native = NativeBridge
     private lateinit var settingsMgr: SettingsManager
 
     @SuppressLint("AddJavascriptInterface")
