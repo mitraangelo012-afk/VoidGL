@@ -40,7 +40,11 @@ class MainActivity : AppCompatActivity() {
             loadUrl("file:///android_asset/ui/index.html")
         }
 
-        native.initLayer()
+        try {
+            native.initLayer()
+        } catch (e: Throwable) {
+            android.util.Log.e("MainActivity", "Native init failed", e)
+        }
 
         lifecycleScope.launch {
             loadSettings()

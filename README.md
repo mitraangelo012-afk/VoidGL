@@ -1,5 +1,7 @@
 # MC Perf Optimizer
 
+*Updated*
+
 Android performance optimization layer for Minecraft Java Edition via mobile launchers (Zalith, PojavLauncher).
 
 ## Requirements
