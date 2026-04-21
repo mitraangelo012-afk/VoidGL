@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MC Perf Optimizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard grid">
+        <section class="card glass">
+            <h2>Live FPS</h2>
+            <div id="fps" class="big-number">--</div>
+            <div id="status" class="status">Ready</div>
+        </section>
+
+        <section class="card glass">
+            <h2>Device</h2>
+            <pre id="deviceInfo">Loading...</pre>
+        </section>
+
+        <section class="card glass">
+            <h2>Presets</h2>
+            <div class="preset-buttons">
+                <button data-preset="low">Low</button>
+                <button data-preset="balanced">Balanced</button>
+                <button data-preset="ultra">Ultra</button>
+            </div>
+        </section>
+
+        <section class="card glass">
+            <h2>Settings</h2>
+
+            <label class="switch">
+                <input type="checkbox" id="fpsBoost">
+                <span class="slider"></span>
+                <span class="label-text">FPS Boost</span>
+            </label>
+
+            <label class="switch">
+                <input type="checkbox" id="reduceEffects">
+                <span class="slider"></span>
+                <span class="label-text">Reduce Effects</span>
+            </label>
+
+            <label class="switch">
+                <input type="checkbox" id="cpuOpt">
+                <span class="slider"></span>
+                <span class="label-text">CPU Optimization</span>
+            </label>
+
+            <div class="slider-group">
+                <span>Resolution Scale: <span id="resVal">1.00</span>x</span>
+                <input type="range" id="resolutionScale" min="0.5" max="1.0" step="0.05" value="1.0">
+            </div>
+
+            <div class="slider-group">
+                <span>FPS Cap (0 = unlimited): <span id="fpsCapVal">0</span></span>
+                <input type="range" id="fpsCap" min="0" max="120" step="5" value="0">
+            </div>
+
+            <button id="launchBtn" class="launch">Launch Minecraft</button>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
