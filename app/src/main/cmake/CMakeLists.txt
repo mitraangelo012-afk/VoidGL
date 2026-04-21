@@ -3,14 +3,14 @@ cmake_minimum_required(VERSION 3.22.1)
 project(perf_layer LANGUAGES CXX)
 
 add_library(perf_layer SHARED
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../cpp/perf_layer.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../cpp/jni_bridge.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/../cpp/perf_layer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/../cpp/jni_bridge.cpp
 )
 
 find_library(log-lib log)
 
 target_include_directories(perf_layer PRIVATE
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/../cpp
 )
 
 target_link_libraries(perf_layer

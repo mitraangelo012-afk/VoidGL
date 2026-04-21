@@ -5,7 +5,6 @@ object NativeBridge {
         System.loadLibrary("perf_layer")
     }
 
-    @JvmExternalName("initLayer")
     external fun initLayer()
 
     external fun setResolutionScale(scale: Float)
