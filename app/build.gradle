@@ -8,6 +8,7 @@ android {
     compileSdk 36
 
     defaultConfig {
+        ndkVersion "26.1.10909125"
         applicationId "com.example.mcperf"
         minSdk 31
         targetSdk 36
